@@ -1,17 +1,7 @@
 name: snapshot-ruby_3_1
 
 on:
-  schedule:
-    - cron: '30 18 * * *' # Daily at 18:30 UTC
-  repository_dispatch:
-    types:
-      - "make-snapshot"
-      - "snapshot-ruby_3_1"
-  workflow_dispatch:
-    inputs:
-      RUBY_PATCH_URL:
-        description: Patch URL
-        required: false
+  push:
 
 jobs:
   make-snapshot:
